@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div:has(> #all-fields-tab) {
+  display: none !important;
+  visibility: hidden !important;
+}
