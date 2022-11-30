@@ -1,5 +1,17 @@
 # Renegade Website
 
+[![CodeQL](https://github.com/bjh-dev/renegade/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bjh-dev/renegade/actions/workflows/codeql-analysis.yml) ![GitHub deployments](https://img.shields.io/github/deployments/bjh-dev/renegade/production?label=vercel%20production) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/bjh-dev/renegade) ![GitHub last commit](https://img.shields.io/github/last-commit/bjh-dev/renegade)
+
+## Lighthouse Scores
+
+[![Lighthouse Accessibility Badge](./web/lighthouse-results/lighthouse_accessibility.svg)](https://github.com/bjh-dev/renegade)
+[![Lighthouse Best Practices Badge](./web/lighthouse-results/lighthouse_best-practices.svg)](https://github.com/bjh-dev/renegade)
+[![Lighthouse Performance Badge](./web/lighthouse-results/lighthouse_performance.svg)](https://github.com/bjh-dev/renegade)
+[![Lighthouse PWA Badge](./web/lighthouse-results/lighthouse_pwa.svg)](https://github.com/bjh-dev/renegade)
+[![Lighthouse SEO Badge](./web/lighthouse-results/lighthouse_seo.svg)](https://github.com/bjh-dev/renegade)
+
+# Overview
+
 This is the repository for the Renegade website. It is built using [Next JS](https://nextjs.oreg/) and [Sanity](https://www.sanity.io/).
 
 The aim of this project is to provide a single code base for the website, and a single source for information architecture. This will allow Renegade to have a single source of truth for the website, and allow them to make changes to the website without having to go through a developer.
