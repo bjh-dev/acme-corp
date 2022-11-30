@@ -8,9 +8,7 @@ import Document, {
 import React from 'react';
 
 import { client } from '@/lib/sanity';
-interface DocumentProps {
-  lang?: string;
-}
+import { DocumentProps } from '@/lib/types';
 
 export default class MyDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext) {

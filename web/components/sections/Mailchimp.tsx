@@ -2,12 +2,7 @@
 import MailchimpForm from 'react-mailchimp-form';
 
 import styles from '@/components/sections/Mailchimp.module.css';
-
-interface MailChimpProps {
-  heading: string;
-  subtitle: string;
-  actionUrl: string;
-}
+import { MailChimpProps } from '@/lib/types';
 
 const Mailchimp = ({ heading, subtitle, actionUrl }: MailChimpProps) => {
   return (

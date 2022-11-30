@@ -7,52 +7,7 @@ import Layout from '@/components/Layout';
 import RenderSections from '@/components/RenderSections';
 import { client } from '@/lib/sanity';
 import { getSlugVariations, slugParamToPath } from '@/lib/urls';
-
-interface FooterNavigationProps {
-  _id: string;
-  title: string;
-  page: object;
-  slug: {
-    current: string;
-  };
-}
-
-export interface ConfigProps {
-  _id: string;
-  _rev: string;
-  _type: string;
-  _createdAt: string;
-  _updatedAt: string;
-  title: string;
-  mainNavigation: {
-    _id: string;
-    _rev: string;
-    _type: string;
-    title: string;
-    slug: {
-      current: string;
-    };
-  }[];
-  footerNavigation: FooterNavigationProps[];
-  footerText: {
-    _key: string;
-    _type: string;
-    title: string;
-    slug: string;
-    children: any[];
-    markDefs: any[];
-    style: string;
-  }[];
-  logo: {
-    logo: string;
-    title: string;
-    asset: {
-      url: string;
-      extension?: string;
-    };
-  };
-  url: string;
-}
+import { LandingPageProps } from '@/lib/types';
 
 const pageFragment = groq`
 ...,
@@ -89,12 +44,6 @@ const siteConfigQuery = groq`
  * for every page requested - /, /about, /contact, etc..
  * From the received params.slug, we're able to query Sanity for the route corresponding to the currently requested path.
  */
-
-interface ServerProps extends GetServerSideProps {
-  params: {
-    slug: string;
-  };
-}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { allRoutesSlugs } = await client.fetch(groq`{
@@ -161,16 +110,6 @@ export const getStaticProps: GetStaticProps = async (props) => {
 
 const builder = imageUrlBuilder(client);
 
-interface LandingPageProps {
-  title?: string;
-  description: string;
-  slug: string;
-  disallowRobots: boolean;
-  openGraphImage: any;
-  content?: any[];
-  config: ConfigProps;
-}
-
 const LandingPage = ({
   title = '',
   description,
@@ -181,7 +120,6 @@ const LandingPage = ({
   config,
   ...rest
 }: LandingPageProps) => {
-  console.log('config: ', config);
   const openGraphImages = openGraphImage
     ? [
         {
@@ -209,16 +147,6 @@ const LandingPage = ({
 
   return (
     <Layout config={config}>
-      <NextSeo
-        title={title}
-        titleTemplate={`%s | ${title}`}
-        description={description}
-        canonical={config?.url && `${config?.url}/${slug}`}
-        openGraph={{
-          images: openGraphImages,
-        }}
-        noindex={disallowRobots}
-      />
       {content && <RenderSections sections={content} />}
     </Layout>
   );

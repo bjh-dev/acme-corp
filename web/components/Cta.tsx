@@ -2,16 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import styles from '@/components/Cta.module.css';
-
-interface CtaProps {
-  title: string;
-  link: string;
-  route: {
-    slug: {
-      current: string;
-    };
-  };
-}
+import { CtaProps } from '@/lib/types';
 
 const cta = ({ title, route, link }: CtaProps) => {
   if (route && route.slug && route.slug.current) {

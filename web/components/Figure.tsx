@@ -3,17 +3,8 @@ import React from 'react';
 
 import styles from '@/components/Figure.module.css';
 import { client } from '@/lib/sanity';
+import { FigureProps } from '@/lib/types';
 const builder = imageUrlBuilder(client);
-
-interface FigureProps {
-  node: {
-    alt: string;
-    caption: string;
-    asset: {
-      _ref: string;
-    };
-  };
-}
 
 const Figure = ({ node }: FigureProps) => {
   const { alt, caption, asset } = node;

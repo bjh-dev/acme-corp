@@ -5,21 +5,7 @@ import React from 'react';
 import styles from '@/components/Footer.module.css';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
-
-interface WithRouterProps {
-  router: NextRouter;
-}
-
-interface FooterProps extends WithRouterProps {
-  text: any;
-  navItems: {
-    _id: string;
-    title: string;
-    slug: {
-      current: string;
-    };
-  }[];
-}
+import { FooterProps } from '@/lib/types';
 
 const Footer = ({ navItems, text, router }: FooterProps) => {
   return (

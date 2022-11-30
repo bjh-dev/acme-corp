@@ -5,16 +5,9 @@ import Cta from '@/components/Cta';
 import styles from '@/components/sections/ImageSection.module.css';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { client } from '@/lib/sanity';
+import { ImageSectionProps } from '@/lib/types';
 
 const builder = imageUrlBuilder(client);
-
-interface ImageSectionProps {
-  heading: string;
-  label: string;
-  text: any[];
-  image: SanityImageSource;
-  cta: any;
-}
 
 const ImageSection = ({
   heading,

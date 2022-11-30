@@ -5,16 +5,10 @@ import Cta from '@/components/Cta';
 import styles from '@/components/sections/Hero.module.css';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { client } from '@/lib/sanity';
+import { HeroProps } from '@/lib/types';
 
 function urlFor(source: SanityImageSource) {
   return imageUrlBuilder(client).image(source);
-}
-
-interface HeroProps {
-  heading: string;
-  backgroundImage: SanityImageSource;
-  tagline: any[];
-  ctas: any[];
 }
 
 const Hero = ({ heading, backgroundImage, tagline, ctas }: HeroProps) => {

@@ -1,8 +1,5 @@
+import { IconProps } from '@/lib/types';
 import { SVGAttributes } from 'react';
-
-export interface IconProps extends SVGAttributes<SVGElement> {
-  className?: string;
-}
 
 const strokeStyle: any = { vectorEffect: 'non-scaling-stroke' };
 

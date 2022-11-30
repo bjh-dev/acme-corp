@@ -3,10 +3,7 @@ import React from 'react';
 
 import EmbedHTML from '@/components/EmbedHTML';
 import Figure from '@/components/Figure';
-
-interface SimpleBlockContentProps {
-  blocks: any[];
-}
+import { SimpleBlockContentProps } from '@/lib/types';
 
 const SimpleBlockContent = ({ blocks }: SimpleBlockContentProps) => {
   if (!blocks) {

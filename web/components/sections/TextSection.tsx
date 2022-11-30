@@ -2,12 +2,7 @@ import React from 'react';
 
 import styles from '@/components/sections/TextSection.module.css';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
-
-interface TextSectionProps {
-  heading: string;
-  label: string;
-  text: any[];
-}
+import { TextSectionProps } from '@/lib/types';
 
 const TextSection = ({ heading, label, text }: TextSectionProps) => {
   return (

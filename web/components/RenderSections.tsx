@@ -3,17 +3,7 @@ import React, { Fragment, ReactElement } from 'react';
 import * as SectionComponents from '@/components/sections';
 import Mailchimp from '@/components/sections/Mailchimp';
 import capitalizeString from '@/lib/capitaliseString';
-
-type SectionProps = {
-  _type: string;
-  _key: string;
-  _id: string;
-  section: ReactElement;
-};
-
-interface RenderSectionsProps {
-  sections: SectionProps[];
-}
+import { RenderSectionsProps, SectionProps } from '@/lib/types';
 
 function resolveSections(section: SectionProps) {
   // @ts-ignore

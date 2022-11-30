@@ -4,12 +4,8 @@ import React from 'react';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import type { ConfigProps } from '@/pages/[[...slug]]';
-
-interface LayoutProps {
-  children: React.ReactNode;
-  config: ConfigProps;
-}
+import type { ConfigProps } from '@/lib/types';
+import { LayoutProps } from '@/lib/types';
 
 const Layout = (props: LayoutProps) => {
   const { config, children } = props;

@@ -6,31 +6,7 @@ import SVG from 'react-inlinesvg';
 import styles from '@/components/Header.module.css';
 import HamburgerIcon from '@/components/icons/Hamburger';
 import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
-
-type LogoProps = {
-  logo: string;
-  title: string;
-  asset: {
-    url: string;
-    extension?: string;
-  };
-};
-
-interface WithRouterProps {
-  router: NextRouter;
-}
-
-interface HeaderProps extends WithRouterProps {
-  title?: string;
-  navItems: {
-    _id: string;
-    title: string;
-    slug: {
-      current: string;
-    };
-  }[];
-  logo: LogoProps;
-}
+import { HeaderProps, LogoProps } from '@/lib/types';
 
 class Header extends Component<HeaderProps> {
   state = { showNav: false };
