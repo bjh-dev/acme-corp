@@ -1,6 +1,6 @@
 import { createClient } from 'sanity-codegen';
 
-import { Documents } from '../studio/@types/schema';
+import { Documents } from './@types/schema';
 
 // This type parameter enables the client to be aware of your generated types
 //                           👇👇👇
