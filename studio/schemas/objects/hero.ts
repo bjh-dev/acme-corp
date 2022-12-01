@@ -38,7 +38,7 @@ export default {
       title: 'heading',
       media: 'backgroundImage',
     },
-    prepare({ title, media }: { title: string; media: any }) {
+    prepare({ title, media }: any) {
       return {
         title,
         subtitle: 'Hero section',

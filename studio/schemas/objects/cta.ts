@@ -40,7 +40,8 @@ export default {
       slug: 'route.slug.current',
       link: 'link',
     },
-    prepare({ title, routeTitle = '', slug, link }: { title: string; routeTitle: string; slug: string; link: string }) {
+    prepare(selection: any) {
+      const { title, routeTitle, slug, link } = selection;
       const subtitleExtra = slug ? `Slug:/${slug}/` : link ? `External link: ${link}` : 'Not set';
       return {
         title: `${title}`,

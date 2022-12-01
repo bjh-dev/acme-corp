@@ -1,3 +1,4 @@
+import { GoGear } from "react-icons/go";
 import * as bcp47 from 'bcp-47';
 import { Rule } from 'sanity';
 const RegexHandle = '/(^|[^@\w])@(\w{1,15})\b/'
@@ -6,12 +7,21 @@ export default {
   name: 'site-config',
   type: 'document',
   title: 'Site configuration',
+  icon: GoGear,
   groups: [
     { name: 'general', title: 'Site', default: true },
-    { name: 'thirdParty', title: '3rd Party' },
+    { name: 'business', title: 'Business Details' },
     { name: 'seo', title: 'SEO Defaults' },
+    { name: 'thirdParty', title: '3rd Party' },
   ],
-  fieldsets: [{ name: 'footer', title: 'Footer' }],
+  fieldsets: [
+    { name: 'footer', title: 'Footer' },
+    {
+      name: 'postalAddress',
+      title: 'Postal Address',
+      collapsible: false,
+    },
+  ],
   fields: [
     {
       name: 'title',
@@ -149,5 +159,79 @@ export default {
       fieldset: 'footer',
       group: 'general',
     },
+    {
+      name: 'legalName',
+      title: 'Legal Entity Name',
+      description: 'Legal entity as registered with the ATO. (i.e. "John Smith" or "XYZ Pty Ltd").',
+      type: 'string',
+      group: 'business',
+    },
+    {
+      name: 'tradingName',
+      title: 'Trading Name',
+      description:
+        'Your registered business name under which you trade (i.e. "John\'s BBQ Shack").',
+      type: 'string',
+      group: 'business',
+    },
+    {
+      name: 'businessPhone',
+      title: 'Phone',
+      type: 'string',
+      group: 'business',
+    },
+    {
+      name: 'businessEmail',
+      title: 'Email',
+      type: 'string',
+      validation: (Rule: Rule) =>
+        Rule.regex(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        ),
+        group: 'business',
+    },
+    {
+      name: 'abn',
+      title: 'ABN/ACN',
+      type: 'string',
+      group: 'business',
+    },
+     {
+      name: 'address',
+      title: 'Business Address',
+      type: 'address',
+      group: 'business',
+    },
+    {
+      name: 'isPostalAddressSame',
+      title: 'Is Postal Address Same as Business Address?',
+      type: 'boolean',
+      fieldset: 'postalAddress',
+      initialValue: true,
+      description: 'If the postal address the same as the business address?',
+      options: {
+        layout: 'checkbox',
+      },
+      group: 'business',
+    },
+    {
+      name: 'postalAddress',
+      title: 'Postal Address',
+      type: 'address',
+      fieldset: 'postalAddress',
+      options: {
+        collapsible: false,
+      },
+      group: 'business',
+    },
+    {
+      name: 'primaryContact',
+      title: 'Primary Contact',
+      description: 'Use this is no other people are listed as contacts below',
+      type: 'reference',
+      group: 'business',
+      to: [{type: 'person'}],
+      validation: (Rule: Rule) => Rule.required(),
+		}
   ],
 };

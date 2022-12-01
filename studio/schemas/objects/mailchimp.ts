@@ -25,7 +25,7 @@ export default {
     select: {
       title: 'heading',
     },
-    prepare({ title }: { title: string }) {
+    prepare({ title }: any) {
       return {
         title,
         subtitle: 'Mailchimp newsletter signup section',

@@ -1,10 +1,16 @@
-import { LinkIcon } from '@sanity/icons';
+import { GoMilestone } from "react-icons/go";
+import { Slug } from "sanity";
+
+type PrepareProps = {
+  pageTitle?: any;
+  slug?: any,
+}
 
 export default {
   name: 'route',
   type: 'document',
   title: 'Route',
-  icon: LinkIcon,
+  icon: GoMilestone,
   fields: [
     {
       name: 'slug',
@@ -39,7 +45,8 @@ export default {
       slug: 'slug.current',
       pageTitle: 'page.title',
     },
-    prepare({ slug, pageTitle }: { slug: string; pageTitle: string }) {
+    prepare(selection: PrepareProps) {
+      const { slug, pageTitle } = selection
       return {
         title: slug === '/' ? '/' : `/${slug}`,
         subtitle: `Page: ${pageTitle}`,

@@ -35,7 +35,7 @@ export default {
       subtitle: 'label',
       media: 'image',
     },
-    prepare({ heading, media }: { heading: string; media: any }) {
+    prepare({ heading, media }: any) {
       return {
         title: `Image: ${heading}`,
         subtitle: 'Image section',

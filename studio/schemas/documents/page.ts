@@ -1,10 +1,10 @@
-import { MasterDetailIcon } from '@sanity/icons';
+import { GoBrowser } from 'react-icons/go'
 
 export default {
   name: 'page',
   type: 'document',
   title: 'Page',
-  icon: MasterDetailIcon,
+  icon: GoBrowser,
   fieldsets: [
     {
       title: 'SEO & metadata',
