@@ -17,13 +17,13 @@ const Footer = ({ navItems, text, router }: FooterProps) => {
                 slugParamToPath(router.query.slug) === item.slug.current;
               return (
                 <li key={item._id}>
-                  <Link href={getPathFromSlug(item.slug.current)}>
-                    <a
-                      data-is-active={isActive ? 'true' : 'false'}
-                      aria-current={isActive}
-                    >
-                      {item.title}
-                    </a>
+                  <Link
+                    href={getPathFromSlug(item.slug.current)}
+                    data-is-active={isActive ? 'true' : 'false'}
+                    aria-current={isActive}>
+
+                    {item.title}
+
                   </Link>
                 </li>
               );
