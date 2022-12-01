@@ -39,7 +39,7 @@ export default {
       slug: 'slug.current',
       pageTitle: 'page.title',
     },
-    prepare({ slug, pageTitle }) {
+    prepare({ slug, pageTitle }: { slug: string; pageTitle: string }) {
       return {
         title: slug === '/' ? '/' : `/${slug}`,
         subtitle: `Page: ${pageTitle}`,

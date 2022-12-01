@@ -1,8 +1,6 @@
 import imageUrlBuilder from '@sanity/image-url';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 import Cta from '@/components/Cta';
-import styles from '@/components/sections/ImageSection.module.css';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { client } from '@/lib/sanity';
 import { ImageSectionProps } from '@/lib/types';
@@ -21,18 +19,17 @@ const ImageSection = ({
   }
 
   return (
-    <div className={styles.root}>
-      <figure className={styles.content}>
+    <div>
+      <figure>
         <img
           src={builder.image(image).auto('format').width(2000).url()}
-          className={styles.image}
           alt={heading}
         />
         <figcaption>
-          <div className={styles.caption}>
-            <div className={styles.captionBox}>
-              <div className={styles.label}>{label}</div>
-              <h2 className={styles.title}>{heading}</h2>
+          <div>
+            <div>
+              <div>{label}</div>
+              <h2>{heading}</h2>
               {text && <SimpleBlockContent blocks={text} />}
               {cta && cta.route && <Cta {...cta} />}
             </div>

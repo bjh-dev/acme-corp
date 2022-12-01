@@ -1,20 +1,20 @@
-# Renegade Website
+# ACME Corp Demo Website
 
-[![CodeQL](https://github.com/bjh-dev/renegade/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bjh-dev/renegade/actions/workflows/codeql-analysis.yml) ![GitHub deployments](https://img.shields.io/github/deployments/bjh-dev/renegade/production?label=vercel%20production) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/bjh-dev/renegade) ![GitHub last commit](https://img.shields.io/github/last-commit/bjh-dev/renegade)
+[![CodeQL](https://github.com/bjh-dev/acme-corp/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bjh-dev/acme-corp/actions/workflows/codeql-analysis.yml) ![GitHub deployments](https://img.shields.io/github/deployments/bjh-dev/acme-corp/production?label=vercel%20production) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/bjh-dev/acme-corp) ![GitHub last commit](https://img.shields.io/github/last-commit/bjh-dev/acme-corp)
 
 ## Lighthouse Scores
 
-[![Lighthouse Accessibility Badge](./web/lighthouse-results/lighthouse_accessibility.svg)](https://github.com/bjh-dev/renegade)
-[![Lighthouse Best Practices Badge](./web/lighthouse-results/lighthouse_best-practices.svg)](https://github.com/bjh-dev/renegade)
-[![Lighthouse Performance Badge](./web/lighthouse-results/lighthouse_performance.svg)](https://github.com/bjh-dev/renegade)
-[![Lighthouse PWA Badge](./web/lighthouse-results/lighthouse_pwa.svg)](https://github.com/bjh-dev/renegade)
-[![Lighthouse SEO Badge](./web/lighthouse-results/lighthouse_seo.svg)](https://github.com/bjh-dev/renegade)
+[![Lighthouse Accessibility Badge](./web/lighthouse-results/lighthouse_accessibility.svg)](https://github.com/bjh-dev/acme-corp)
+[![Lighthouse Best Practices Badge](./web/lighthouse-results/lighthouse_best-practices.svg)](https://github.com/bjh-dev/acme-corp)
+[![Lighthouse Performance Badge](./web/lighthouse-results/lighthouse_performance.svg)](https://github.com/bjh-dev/acme-corp)
+[![Lighthouse PWA Badge](./web/lighthouse-results/lighthouse_pwa.svg)](https://github.com/bjh-dev/acme-corp)
+[![Lighthouse SEO Badge](./web/lighthouse-results/lighthouse_seo.svg)](https://github.com/bjh-dev/acme-corp)
 
 # Overview
 
-This is the repository for the Renegade website. It is built using [Next JS](https://nextjs.oreg/) and [Sanity](https://www.sanity.io/).
+This is the repository for the demo ACME Corp website. It is built using [Next JS](https://nextjs.oreg/) and [Sanity](https://www.sanity.io/).
 
-The aim of this project is to provide a single code base for the website, and a single source for information architecture. This will allow Renegade to have a single source of truth for the website, and allow them to make changes to the website without having to go through a developer.
+The aim of this project is to provide a single code base for the website, and a single source for information architecture. This will allow ACME Corp to have a single source of truth for the website, and allow them to make changes to the website without having to go through a developer.
 
 NextJS was chosen because it is a React framework that provides server side rendering. This is important because it allows the website to be indexed by search engines. It also provides a good developer experience, with hot reloading and a good CLI.
 
@@ -39,8 +39,13 @@ While the list of features is still being determined, the following are the feat
 # 🚀 Quickstart Guide
 
 ```bash
-git clone git@github.com:renegade/rmma.git
-cd iwc && pnpm install
+// Clone and install dependencies
+git clone git@github.com:bjh-dev/acme-corp.git
+cd acme-corp && cd web && pnpm install
+cd .. && cd studio && pnpm install
+cd .. && pnpm install
+
+ // This will spin up the NextJS app and the Sanity Studio
 pnpm dev
 ```
 
@@ -68,14 +73,3 @@ Next.js supports modern browsers with zero configuration.
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn about Tailwind CSS.
 
 Much of this project borrows from [Justin Linn](https://github.com/LinnJS/nextjs-sanity-website-builder) typescript conversion of the popular [Sanity Landing Page Builder](https://github.com/sanity-io/sanity-template-nextjs-landing-pages).
-
-## Quick start
-
-The below will be deleted once the project uses PNPM.
-
-1. Clone this repository
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the studio and frontend locally
-   - Your studio should be running on [http://localhost:3333](http://localhost:3333)
-   - Your frontend should be running on [http://localhost:3000](http://localhost:3000)
-4. `npm run build` to build to production locally

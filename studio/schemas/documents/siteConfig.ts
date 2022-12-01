@@ -1,43 +1,59 @@
 import * as bcp47 from 'bcp-47';
-
-import { RuleType } from '../../@types';
+import { Rule } from 'sanity';
+const RegexHandle = '/(^|[^@\w])@(\w{1,15})\b/'
 
 export default {
   name: 'site-config',
   type: 'document',
   title: 'Site configuration',
+  groups: [
+    { name: 'general', title: 'Site', default: true },
+    { name: 'thirdParty', title: '3rd Party' },
+    { name: 'seo', title: 'SEO Defaults' },
+  ],
   fieldsets: [{ name: 'footer', title: 'Footer' }],
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Site title',
+      group: 'general',
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+      group: 'seo',
     },
     {
       title: 'URL',
       name: 'url',
       type: 'url',
       description: 'The main site url. Used to create canonical url',
+      group: 'general',
     },
     {
       name: 'frontpage',
       type: 'reference',
       description: 'Choose page to be the frontpage',
       to: { type: 'page' },
+      group: 'general',
     },
     {
       title: 'Site language',
       description: 'Should be a valid bcp47 language code like en, en-US, no or nb-NO',
       name: 'lang',
       type: 'string',
-      validation: (Rule: RuleType) =>
-        Rule.custom((lang) => (bcp47.parse(lang) ? true : 'Please use a valid bcp47 code')),
+      validation: (Rule: Rule) =>
+        Rule.custom((lang: string) => (bcp47.parse(lang) ? true : 'Please use a valid bcp47 code')),
+      group: 'general',
     },
     {
       title: 'Brand logo',
       description: 'Best choice is to use an SVG where the color are set with currentColor',
       name: 'logo',
       type: 'image',
+      group: 'general',
       fields: [
         {
           name: 'alt',
@@ -51,10 +67,54 @@ export default {
       ],
     },
     {
+      name: 'facebookId',
+      type: 'string',
+      title: 'Facebook App ID',
+      description: 'Find out more https://bit.ly/3SdLEeF',
+      group: 'thirdParty',
+    },
+    {
+      name: 'facebookPageUrl',
+      type: 'url',
+      title: 'Facebook Page URL',
+      description: 'Enter the full url to your Facebook page',
+      group: 'thirdParty',
+    },
+    {
+      name: 'instagramHandle',
+      type: 'string',
+      title: 'Instagram Handle',
+      description: 'Enter your Instagram profile handle (with @)',
+      group: 'thirdParty',
+      validation: (Rule: Rule) => Rule.regex(/(^|[^@\w])@(\w{1,15})\b/, { name: '@handle' }),
+    },
+    {
+      name: 'twitterHandle',
+      type: 'string',
+      title: 'Twitter Handle',
+      description: 'Enter your Twitter handle (with @)',
+      group: 'thirdParty',
+      validation: (Rule: Rule) => Rule.regex(/(^|[^@\w])@(\w{1,15})\b/, { name: '@handle' }),
+    },
+    {
+      name: 'googleAnalyticsId',
+      type: 'string',
+      title: 'Google Analytics ID',
+      group: 'thirdParty',
+    },
+    {
+      name: 'youtubeUrl',
+      type: 'url',
+      title: 'YouTube Channel URL',
+      description: 'Enter the full url to your YouTube channel',
+      group: 'thirdParty',
+    },
+    {
       title: 'Main navigation',
       name: 'mainNavigation',
       description: 'Select pages for the top menu',
-      validation: (Rule: RuleType) => [
+      group: 'general',
+      validation: (Rule: Rule) => [
         Rule.max(5).warning('Are you sure you want more than 5 items?'),
         Rule.unique().error('You have duplicate menu items'),
       ],
@@ -70,11 +130,12 @@ export default {
       title: 'Footer navigation items',
       name: 'footerNavigation',
       type: 'array',
-      validation: (Rule: RuleType) => [
+      validation: (Rule: Rule) => [
         Rule.max(10).warning('Are you sure you want more than 10 items?'),
         Rule.unique().error('You have duplicate menu items'),
       ],
       fieldset: 'footer',
+      group: 'general',
       of: [
         {
           type: 'reference',
@@ -86,6 +147,7 @@ export default {
       name: 'footerText',
       type: 'simplePortableText',
       fieldset: 'footer',
+      group: 'general',
     },
   ],
 };

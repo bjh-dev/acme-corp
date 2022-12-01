@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 
-import styles from '@/components/Cta.module.css';
 import { CtaProps } from '@/lib/types';
 
 const cta = ({ title, route, link }: CtaProps) => {
@@ -14,20 +13,16 @@ const cta = ({ title, route, link }: CtaProps) => {
         }}
         as={`/${route.slug.current}`}
       >
-        <a className={styles.button}>{title}</a>
+        <a>{title}</a>
       </Link>
     );
   }
 
   if (link) {
-    return (
-      <a className={styles.button} href={link}>
-        {title}
-      </a>
-    );
+    return <a href={link}>{title}</a>;
   }
 
-  return <a className={styles.button}>{title}</a>;
+  return <a>{title}</a>;
 };
 
 export default cta;

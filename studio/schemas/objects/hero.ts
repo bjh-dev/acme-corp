@@ -1,8 +1,3 @@
-interface PrepareProps {
-  title: string;
-  media: any;
-}
-
 export default {
   type: 'object',
   name: 'hero',
@@ -43,7 +38,7 @@ export default {
       title: 'heading',
       media: 'backgroundImage',
     },
-    prepare({ title, media }: PrepareProps) {
+    prepare({ title, media }: { title: string; media: any }) {
       return {
         title,
         subtitle: 'Hero section',

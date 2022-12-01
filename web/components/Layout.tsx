@@ -4,7 +4,6 @@ import React from 'react';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import type { ConfigProps } from '@/lib/types';
 import { LayoutProps } from '@/lib/types';
 
 const Layout = (props: LayoutProps) => {

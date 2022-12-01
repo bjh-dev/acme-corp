@@ -1,15 +1,14 @@
 // @ts-ignore
 import MailchimpForm from 'react-mailchimp-form';
 
-import styles from '@/components/sections/Mailchimp.module.css';
 import { MailChimpProps } from '@/lib/types';
 
 const Mailchimp = ({ heading, subtitle, actionUrl }: MailChimpProps) => {
   return (
-    <section className={styles.root}>
-      <div className={styles.container}>
-        <h2 className={styles.heading}>{heading}</h2>
-        <p className={styles.subtitle}>{subtitle}</p>
+    <section>
+      <div>
+        <h2>{heading}</h2>
+        <p>{subtitle}</p>
         {actionUrl && (
           <MailchimpForm
             action={actionUrl}
@@ -18,11 +17,10 @@ const Mailchimp = ({ heading, subtitle, actionUrl }: MailChimpProps) => {
                 name: 'EMAIL',
                 placeholder: 'Email',
                 type: 'email',
-                className: styles.email,
                 required: true,
               },
             ]}
-            buttonClassName={styles.button}
+            button
             styles={{
               sendingMsg: {
                 color: '#0652DD',
@@ -45,7 +43,6 @@ const Mailchimp = ({ heading, subtitle, actionUrl }: MailChimpProps) => {
               duplicate: 'Already subscribed',
               button: 'Subscribe!',
             }}
-            className={styles.form}
           />
         )}
       </div>

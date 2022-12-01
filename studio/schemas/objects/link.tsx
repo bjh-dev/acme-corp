@@ -1,7 +1,5 @@
 import React, {ReactNode} from 'react'
-
-import {RuleType} from '../../@types'
-
+import {Rule} from 'sanity'
 interface LinkRenderProps {
   children: ReactNode
 }
@@ -17,7 +15,7 @@ export default {
       title: 'URL',
       name: 'href',
       type: 'url',
-      validation: (Rule: RuleType) =>
+      validation: (Rule: Rule) =>
         Rule.uri({
           allowRelative: true,
           scheme: ['https', 'http', 'mailto', 'tel'],

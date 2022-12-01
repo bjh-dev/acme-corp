@@ -1,6 +1,7 @@
 {
   "eslint.workingDirectories": ["web", "studio"],
   "cSpell.words": [
+    "fieldsets",
     "portabletext"
   ]
 }

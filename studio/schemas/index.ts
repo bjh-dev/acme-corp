@@ -17,9 +17,18 @@ import hero from './objects/hero';
 import imageSection from './objects/imageSection';
 import mailchimp from './objects/mailchimp';
 import textSection from './objects/textSection';
+import seo from './objects/seo';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export const schemaTypes = [
+    // Document types
+    page,
+    route,
+    siteConfig,
+
+    // Sections
+
+    // Object types
     cta,
     embedHTML,
     figure,
@@ -28,10 +37,8 @@ export const schemaTypes = [
     internalLink,
     link,
     mailchimp,
-    page,
     portableText,
-    route,
+    seo,
     simplePortableText,
-    siteConfig,
     textSection,
 ]

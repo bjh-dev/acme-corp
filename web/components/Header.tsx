@@ -3,7 +3,6 @@ import { NextRouter, withRouter } from 'next/router';
 import React, { Component } from 'react';
 import SVG from 'react-inlinesvg';
 
-import styles from '@/components/Header.module.css';
 import HamburgerIcon from '@/components/icons/Hamburger';
 import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
 import { HeaderProps, LogoProps } from '@/lib/types';
@@ -38,12 +37,10 @@ class Header extends Component<HeaderProps> {
     }
 
     if (logo.asset.url && logo.asset.extension === 'svg') {
-      return <SVG src={logo.asset.url} className={styles.logo} />;
+      return <SVG src={logo.asset.url} />;
     }
 
-    return (
-      <img src={logo.asset.url} alt={logo.title} className={styles.logo} />
-    );
+    return <img src={logo.asset.url} alt={logo.title} />;
   };
 
   render() {
@@ -51,21 +48,21 @@ class Header extends Component<HeaderProps> {
     const { showNav } = this.state;
 
     return (
-      <div className={styles.root} data-show-nav={showNav}>
-        <h1 className={styles.branding}>
+      <div data-show-nav={showNav}>
+        <h1>
           <Link href={'/'}>
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
         </h1>
-        <nav className={styles.nav}>
-          <ul className={styles.navItems}>
+        <nav>
+          <ul>
             {navItems &&
               navItems.map((item) => {
                 const { slug, title, _id } = item;
                 const isActive =
                   slugParamToPath(router.query.slug) === slug.current;
                 return (
-                  <li key={_id} className={styles.navItem}>
+                  <li key={_id}>
                     <Link href={getPathFromSlug(slug.current)}>
                       <a
                         data-is-active={isActive ? 'true' : 'false'}
@@ -78,11 +75,8 @@ class Header extends Component<HeaderProps> {
                 );
               })}
           </ul>
-          <button
-            className={styles.showNavButton}
-            onClick={this.handleMenuToggle}
-          >
-            <HamburgerIcon className={styles.hamburgerIcon} />
+          <button onClick={this.handleMenuToggle}>
+            <HamburgerIcon />
           </button>
         </nav>
       </div>

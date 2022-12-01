@@ -2,7 +2,6 @@ import imageUrlBuilder from '@sanity/image-url';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 import Cta from '@/components/Cta';
-import styles from '@/components/sections/Hero.module.css';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { client } from '@/lib/sanity';
 import { HeroProps } from '@/lib/types';
@@ -22,14 +21,12 @@ const Hero = ({ heading, backgroundImage, tagline, ctas }: HeroProps) => {
     : {};
 
   return (
-    <div className={styles.root} style={style}>
-      <div className={styles.content}>
-        <h1 className={styles.title}>{heading}</h1>
-        <div className={styles.tagline}>
-          {tagline && <SimpleBlockContent blocks={tagline} />}
-        </div>
+    <div>
+      <div>
+        <h1>{heading}</h1>
+        <div>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
         {ctas && (
-          <div className={styles.ctas}>
+          <div>
             {ctas.map((cta) => (
               <Cta {...cta} key={cta._key} />
             ))}

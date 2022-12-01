@@ -2,22 +2,21 @@ import Link from 'next/link';
 import { NextRouter, withRouter } from 'next/router';
 import React from 'react';
 
-import styles from '@/components/Footer.module.css';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
 import { FooterProps } from '@/lib/types';
 
 const Footer = ({ navItems, text, router }: FooterProps) => {
   return (
-    <div className={styles.root}>
+    <div>
       <nav>
-        <ul className={styles.items}>
+        <ul>
           {navItems &&
             navItems.map((item) => {
               const isActive =
                 slugParamToPath(router.query.slug) === item.slug.current;
               return (
-                <li key={item._id} className={styles.item}>
+                <li key={item._id}>
                   <Link href={getPathFromSlug(item.slug.current)}>
                     <a
                       data-is-active={isActive ? 'true' : 'false'}
@@ -31,7 +30,7 @@ const Footer = ({ navItems, text, router }: FooterProps) => {
             })}
         </ul>
       </nav>
-      <div className={styles.text}>
+      <div>
         <SimpleBlockContent blocks={text} />
       </div>
     </div>

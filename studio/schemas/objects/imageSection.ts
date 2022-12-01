@@ -1,8 +1,3 @@
-interface PrepareProps {
-  heading: string;
-  media: any;
-}
-
 export default {
   type: 'object',
   name: 'imageSection',
@@ -40,7 +35,7 @@ export default {
       subtitle: 'label',
       media: 'image',
     },
-    prepare({ heading, media }: PrepareProps) {
+    prepare({ heading, media }: { heading: string; media: any }) {
       return {
         title: `Image: ${heading}`,
         subtitle: 'Image section',

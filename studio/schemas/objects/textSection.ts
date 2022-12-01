@@ -1,7 +1,3 @@
-interface PrepareProps {
-  heading: string;
-}
-
 export default {
   type: 'object',
   name: 'textSection',
@@ -27,7 +23,7 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({ heading }: PrepareProps) {
+    prepare({ heading }: { heading: string }) {
       return {
         title: `${heading}`,
         subtitle: 'Text section',

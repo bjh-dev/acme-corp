@@ -1,7 +1,4 @@
 import '@/styles/globals.css';
-import '@/styles/shared.module.css';
-import '@/styles/layout.css';
-import '@/styles/custom-properties.css';
 
 import { AppProps as NextAppProps } from 'next/app';
 import React from 'react';
