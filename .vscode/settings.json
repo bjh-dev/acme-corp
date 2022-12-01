@@ -2,6 +2,7 @@
   "eslint.workingDirectories": ["web", "studio"],
   "cSpell.words": [
     "fieldsets",
+    "groq",
     "portabletext"
   ]
 }
