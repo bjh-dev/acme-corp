@@ -50,8 +50,8 @@ class Header extends Component<HeaderProps> {
     return (
       <div data-show-nav={showNav}>
         <h1>
-          <Link href={'/'}>
-            <a title={title}>{this.renderLogo(logo)}</a>
+          <Link href={'/'} title={title}>
+            {this.renderLogo(logo)}
           </Link>
         </h1>
         <nav>
@@ -63,13 +63,13 @@ class Header extends Component<HeaderProps> {
                   slugParamToPath(router.query.slug) === slug.current;
                 return (
                   <li key={_id}>
-                    <Link href={getPathFromSlug(slug.current)}>
-                      <a
-                        data-is-active={isActive ? 'true' : 'false'}
-                        aria-current={isActive}
-                      >
-                        {title}
-                      </a>
+                    <Link
+                      href={getPathFromSlug(slug.current)}
+                      data-is-active={isActive ? 'true' : 'false'}
+                      aria-current={isActive}>
+
+                      {title}
+
                     </Link>
                   </li>
                 );

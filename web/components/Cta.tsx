@@ -13,7 +13,7 @@ const cta = ({ title, route, link }: CtaProps) => {
         }}
         as={`/${route.slug.current}`}
       >
-        <a>{title}</a>
+        {title}
       </Link>
     );
   }
