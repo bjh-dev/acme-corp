@@ -66,7 +66,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (props) => {
   const slug = slugParamToPath(props.params?.slug);
   const config = await client.fetch(siteConfigQuery);
-  console.log(config);
   let data;
 
   // Frontpage - fetch the linked `frontpage` from the global configuration document.
