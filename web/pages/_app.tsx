@@ -11,7 +11,6 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
       <ThemeProvider attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
-      ``
     </>
   );
 };
