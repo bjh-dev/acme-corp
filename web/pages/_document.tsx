@@ -9,6 +9,7 @@ import React from 'react';
 
 import { client } from '@/lib/sanity';
 import { DocumentProps } from '@/lib/types';
+import Favicon from '@/components/Favicon';
 
 export default class MyDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext) {
@@ -22,8 +23,11 @@ export default class MyDocument extends Document<DocumentProps> {
 
   render() {
     return (
-      <Html lang={this.props.lang || 'en'}>
-        <Head />
+      <Html lang={this.props.lang || 'en-AU'}>
+        <Head>
+          <meta charSet="utf-8" />
+          <Favicon />
+        </Head>
         <body>
           <Main />
           <NextScript />
