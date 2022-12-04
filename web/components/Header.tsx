@@ -66,10 +66,9 @@ class Header extends Component<HeaderProps> {
                     <Link
                       href={getPathFromSlug(slug.current)}
                       data-is-active={isActive ? 'true' : 'false'}
-                      aria-current={isActive}>
-
+                      aria-current={isActive}
+                    >
                       {title}
-
                     </Link>
                   </li>
                 );

@@ -20,10 +20,9 @@ const Footer = ({ navItems, text, router }: FooterProps) => {
                   <Link
                     href={getPathFromSlug(item.slug.current)}
                     data-is-active={isActive ? 'true' : 'false'}
-                    aria-current={isActive}>
-
+                    aria-current={isActive}
+                  >
                     {item.title}
-
                   </Link>
                 </li>
               );
