@@ -3,15 +3,24 @@
 @tailwind utilities;
 
 .two-columns {
-  column-count: 2;
-  text-align: justify;
-  column-gap: 4rem;
+    column-count: 1;
+    text-align: justify;
+    column-span: none;
+    column-gap: 4rem;
+    widows: 2;
+    orphans: 2;
+    @media (min-width: theme('screens.md')) {
+        column-count: 2;
+    }
+    @media (min-width: theme('screens.xl')) {
+        column-count: 3;
+    }
 }
 
 /*  add custom global styles here */
 /*  Fix for next/image components : Safari 15+ displays a gray border while loading. Possible solutions: */
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading="lazy"] {
-    clip-path: inset(0.6px)
-  }
+    img[loading='lazy'] {
+        clip-path: inset(0.6px);
+    }
 }
