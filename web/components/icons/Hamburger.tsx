@@ -1,5 +1,6 @@
-import { IconProps } from '@/lib/types';
 import { SVGAttributes } from 'react';
+
+import { IconProps } from '@/lib/types';
 
 const strokeStyle: any = { vectorEffect: 'non-scaling-stroke' };
 

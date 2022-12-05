@@ -3,8 +3,9 @@ import { NextRouter, withRouter } from 'next/router';
 import React, { Component } from 'react';
 
 import HamburgerIcon from '@/components/icons/Hamburger';
-import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
 import { HeaderProps, LogoProps } from '@/lib/types';
+import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
+
 import Logo from '../ui/Logo';
 
 class Header extends Component<HeaderProps> {
@@ -29,18 +30,6 @@ class Header extends Component<HeaderProps> {
     this.setState({
       showNav: !showNav,
     });
-  };
-
-  renderLogo = (logo: LogoProps) => {
-    if (!logo || !logo.asset) {
-      return null;
-    }
-
-    if (logo.asset.url && logo.asset.extension === 'svg') {
-      return;
-    }
-
-    return <img src={logo.asset.url} alt={logo.title} />;
   };
 
   render() {

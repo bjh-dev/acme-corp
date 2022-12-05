@@ -6,8 +6,8 @@ import { NextSeo } from 'next-seo';
 import Layout from '@/components/global/Layout';
 import RenderSections from '@/components/RenderSections';
 import { client } from '@/lib/sanity';
-import { getSlugVariations, slugParamToPath } from '@/lib/urls';
 import { LandingPageProps } from '@/lib/types';
+import { getSlugVariations, slugParamToPath } from '@/lib/urls';
 
 const pageFragment = groq`
 ...,

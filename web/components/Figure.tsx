@@ -1,4 +1,5 @@
 import imageUrlBuilder from '@sanity/image-url';
+import Image from 'next/image';
 import React from 'react';
 
 import { client } from '@/lib/sanity';
@@ -13,9 +14,10 @@ const Figure = (props) => {
   return (
     <>
       <figure>
-        <img
+        <Image
           src={builder.image(value.asset).auto('format').width(2000).url()}
           alt={value.alt}
+          fill
         />
         {value.caption && (
           <figcaption>

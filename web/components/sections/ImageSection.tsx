@@ -1,11 +1,11 @@
 import imageUrlBuilder from '@sanity/image-url';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import Image from 'next/image';
 
 import Cta from '@/components/Cta';
 import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { client } from '@/lib/sanity';
 import { ImageSectionProps } from '@/lib/types';
-import Image from 'next/image';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 function urlFor(source: SanityImageSource) {
   return imageUrlBuilder(client).image(source);

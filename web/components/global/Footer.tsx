@@ -3,9 +3,9 @@ import { NextRouter, withRouter } from 'next/router';
 import React from 'react';
 
 import SimpleBlockContent from '@/components/SimpleBlockContent';
-import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
-import { FooterProps } from '@/lib/types';
 import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
+import { FooterProps } from '@/lib/types';
+import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
 
 const Footer = ({ navItems, text, router }: FooterProps) => {
   return (

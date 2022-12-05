@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
 import { ReactComponentLike } from 'prop-types';
+import { ReactElement } from 'react';
 
 type Meta = {
   parent: { [key: string]: any };
@@ -107,7 +107,7 @@ export type Field =
 
 type Preview = {
   select?: { [key: string]: string };
-  prepare?: (selection: { [key: string]: any }) => { title?: string; subtitle?: string }; // eslint-disable-line @typescript-eslint/no-explicit-any
+  prepare?: (selection: { [key: string]: any }) => { title?: string; subtitle?: string };
   component?: (props: PreviewProps) => ReactElement;
 };
 
@@ -137,7 +137,7 @@ export type Document = {
   validation?: Validation;
   preview?: Preview;
   fieldsets?: Fieldset[];
-  initialValue?: { [key: string]: any }; // eslint-disable-line @typescript-eslint/no-explicit-any
+  initialValue?: { [key: string]: any };
   orderings?: {
     name: string;
     title: string;

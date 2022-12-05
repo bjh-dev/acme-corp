@@ -7,9 +7,9 @@ import Document, {
 } from 'next/document';
 import React from 'react';
 
+import Favicon from '@/components/Favicon';
 import { client } from '@/lib/sanity';
 import { DocumentProps } from '@/lib/types';
-import Favicon from '@/components/Favicon';
 
 export default class MyDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext) {

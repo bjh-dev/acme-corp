@@ -1,7 +1,7 @@
 import '@/styles/globals.css';
-import { ThemeProvider } from 'next-themes';
 
 import { AppProps as NextAppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 import React from 'react';
 // import { SiteConfig } from '../../studio/@types/schema';
 

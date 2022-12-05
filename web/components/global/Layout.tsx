@@ -4,8 +4,8 @@ import React from 'react';
 
 import Footer from '@/components/global/Footer';
 import Header from '@/components/global/Header';
-import { LayoutProps } from '@/lib/types';
 import Logo from '@/components/ui/Logo';
+import { LayoutProps } from '@/lib/types';
 
 const Layout = (props: LayoutProps) => {
   const { config, children } = props;

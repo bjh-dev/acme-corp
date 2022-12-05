@@ -1,5 +1,6 @@
-import { EmbedHTMLProps } from '@/lib/types';
 import React from 'react';
+
+import { EmbedHTMLProps } from '@/lib/types';
 
 const EmbedHTML = ({ node }: EmbedHTMLProps) => {
   const { html } = node;
