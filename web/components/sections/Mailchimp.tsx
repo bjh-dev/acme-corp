@@ -5,48 +5,48 @@ import { MailChimpProps } from '@/lib/types';
 
 const Mailchimp = ({ heading, subtitle, actionUrl }: MailChimpProps) => {
   return (
-    <section>
-      <div>
-        <h2>{heading}</h2>
-        <p>{subtitle}</p>
-        {actionUrl && (
-          <MailchimpForm
-            action={actionUrl}
-            fields={[
-              {
-                name: 'EMAIL',
-                placeholder: 'Email',
-                type: 'email',
-                required: true,
-              },
-            ]}
-            button
-            styles={{
-              sendingMsg: {
-                color: '#0652DD',
-              },
-              successMsg: {
-                color: '#009432',
-              },
-              duplicateMsg: {
-                color: '#EE5A24',
-              },
-              errorMsg: {
-                color: 'red',
-              },
-            }}
-            messages={{
-              sending: 'Sending...',
-              success: 'Thank you for subscribing!',
-              error: 'An unexpected internal error has occurred.',
-              empty: 'You must write an e-mail.',
-              duplicate: 'Already subscribed',
-              button: 'Subscribe!',
-            }}
-          />
-        )}
+    <div className="bg-white py-24  lg:py-32">
+      <div className="container">
+        <div className=" lg:flex lg:items-center">
+          <div className="lg:w-0 lg:flex-1">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              {heading}
+            </h2>
+            <p className="mt-3 max-w-3xl text-lg text-gray-500">{subtitle}</p>
+          </div>
+          <div className="mt-8 lg:mt-0 lg:ml-8">
+            <form className="sm:flex">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email-address"
+                name="email-address"
+                type="email"
+                autoComplete="email"
+                required
+                className="w-full rounded-md border border-gray-300 px-5 py-3 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 sm:max-w-xs"
+                placeholder="Enter your email"
+              />
+              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-5 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Notify me
+                </button>
+              </div>
+            </form>
+            <p className="mt-3 text-sm text-gray-500">
+              We care about the protection of your data. Read our{' '}
+              <a href="#" className="font-medium underline">
+                Privacy Policy.
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

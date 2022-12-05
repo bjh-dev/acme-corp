@@ -18,13 +18,13 @@ const LogoVertical = () => {
             y2="4.61"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#a5b4fc" />
-            <stop offset=".09" stop-color="#949ff3" />
-            <stop offset=".27" stop-color="#777ae4" />
-            <stop offset=".46" stop-color="#605dd9" />
-            <stop offset=".64" stop-color="#5048d0" />
-            <stop offset=".83" stop-color="#463ccb" />
-            <stop offset="1" stop-color="#4338ca" />
+            <stop offset="0" stopColor="#a5b4fc" />
+            <stop offset=".09" stopColor="#949ff3" />
+            <stop offset=".27" stopColor="#777ae4" />
+            <stop offset=".46" stopColor="#605dd9" />
+            <stop offset=".64" stopColor="#5048d0" />
+            <stop offset=".83" stopColor="#463ccb" />
+            <stop offset="1" stopColor="#4338ca" />
           </linearGradient>
           <linearGradient
             id="b"
@@ -35,13 +35,13 @@ const LogoVertical = () => {
             gradientTransform="matrix(.84299 -.36847 .35245 .80634 9.91 508.52)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#4338ca" />
-            <stop offset=".17" stop-color="#463ccb" />
-            <stop offset=".36" stop-color="#5048d0" />
-            <stop offset=".54" stop-color="#605dd9" />
-            <stop offset=".73" stop-color="#777ae4" />
-            <stop offset=".91" stop-color="#949ff3" />
-            <stop offset="1" stop-color="#a5b4fc" />
+            <stop offset="0" stopColor="#4338ca" />
+            <stop offset=".17" stopColor="#463ccb" />
+            <stop offset=".36" stopColor="#5048d0" />
+            <stop offset=".54" stopColor="#605dd9" />
+            <stop offset=".73" stopColor="#777ae4" />
+            <stop offset=".91" stopColor="#949ff3" />
+            <stop offset="1" stopColor="#a5b4fc" />
           </linearGradient>
         </defs>
         <path
@@ -82,13 +82,13 @@ const LogoHorizontal = () => {
             y2="7.49"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#a5b4fc" />
-            <stop offset=".09" stop-color="#949ff3" />
-            <stop offset=".27" stop-color="#777ae4" />
-            <stop offset=".46" stop-color="#605dd9" />
-            <stop offset=".64" stop-color="#5048d0" />
-            <stop offset=".83" stop-color="#463ccb" />
-            <stop offset="1" stop-color="#4338ca" />
+            <stop offset="0" stopColor="#a5b4fc" />
+            <stop offset=".09" stopColor="#949ff3" />
+            <stop offset=".27" stopColor="#777ae4" />
+            <stop offset=".46" stopColor="#605dd9" />
+            <stop offset=".64" stopColor="#5048d0" />
+            <stop offset=".83" stopColor="#463ccb" />
+            <stop offset="1" stopColor="#4338ca" />
           </linearGradient>
           <linearGradient
             id="b"
@@ -99,13 +99,13 @@ const LogoHorizontal = () => {
             gradientTransform="matrix(.84299 -.36847 .35245 .80634 83.55 654.93)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#4338ca" />
-            <stop offset=".17" stop-color="#463ccb" />
-            <stop offset=".36" stop-color="#5048d0" />
-            <stop offset=".54" stop-color="#605dd9" />
-            <stop offset=".73" stop-color="#777ae4" />
-            <stop offset=".91" stop-color="#949ff3" />
-            <stop offset="1" stop-color="#a5b4fc" />
+            <stop offset="0" stopColor="#4338ca" />
+            <stop offset=".17" stopColor="#463ccb" />
+            <stop offset=".36" stopColor="#5048d0" />
+            <stop offset=".54" stopColor="#605dd9" />
+            <stop offset=".73" stopColor="#777ae4" />
+            <stop offset=".91" stopColor="#949ff3" />
+            <stop offset="1" stopColor="#a5b4fc" />
           </linearGradient>
         </defs>
         <path
@@ -137,7 +137,6 @@ const Logo = ({ layout }: Logo) => {
 
   useEffect(() => {
     const currentTheme = localStorage.getItem('theme');
-    console.log(currentTheme);
   }, []);
 
   // After mounting, we have access to the theme

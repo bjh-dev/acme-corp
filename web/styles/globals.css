@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.two-columns {
+  column-count: 2;
+  text-align: justify;
+  column-gap: 4rem;
+}
+
 /*  add custom global styles here */
 /*  Fix for next/image components : Safari 15+ displays a gray border while loading. Possible solutions: */
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {

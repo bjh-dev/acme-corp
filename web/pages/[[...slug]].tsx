@@ -3,7 +3,7 @@ import groq from 'groq';
 import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
-import Layout from '@/components/Layout';
+import Layout from '@/components/global/Layout';
 import RenderSections from '@/components/RenderSections';
 import { client } from '@/lib/sanity';
 import { getSlugVariations, slugParamToPath } from '@/lib/urls';

@@ -5,27 +5,29 @@ import { client } from '@/lib/sanity';
 import { FigureProps } from '@/lib/types';
 const builder = imageUrlBuilder(client);
 
-const Figure = ({ node }: FigureProps) => {
-  const { alt, caption, asset } = node;
-  if (!asset) {
+const Figure = (props) => {
+  const { value } = props;
+  if (!value.asset) {
     return undefined;
   }
   return (
-    <figure>
-      <img
-        src={builder.image(asset).auto('format').width(2000).url()}
-        alt={alt}
-      />
-      {caption && (
-        <figcaption>
-          <div>
+    <>
+      <figure>
+        <img
+          src={builder.image(value.asset).auto('format').width(2000).url()}
+          alt={value.alt}
+        />
+        {value.caption && (
+          <figcaption>
             <div>
-              <p>{caption}</p>
+              <div>
+                <p>{value.caption}</p>
+              </div>
             </div>
-          </div>
-        </figcaption>
-      )}
-    </figure>
+          </figcaption>
+        )}
+      </figure>
+    </>
   );
 };
 
