@@ -7,7 +7,8 @@ export default {
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
-      description: 'Important for SEO and accessiblity.',
+      description:
+        'Important for SEO and accessiblity. Describe the image for visually impaired users.',
       options: {
         isHighlighted: true,
       },
@@ -16,7 +17,7 @@ export default {
       name: 'caption',
       type: 'string',
       title: 'Caption',
-      description: 'Describe the image for visually impaired users.',
+      description: 'Optionally, provide a caption for the image (e.g. for image credits)',
       options: {
         isHighlighted: true,
       },

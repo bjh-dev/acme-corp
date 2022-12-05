@@ -5,12 +5,6 @@ export default {
   title: 'SEO',
   type: 'object',
   description: 'These settings are used to generate the SEO and Social Media settings',
-  fieldsets: [
-    {
-      name: 'socialImage',
-      title: 'Social Media Image',
-    },
-  ],
   fields: [
     {
       name: 'title',
@@ -28,22 +22,17 @@ export default {
       validation: (Rule: Rule) => Rule.min(50).max(160),
     },
     {
-      name: 'socialImage',
-      type: 'image',
+      name: 'accessibleImage',
+      type: 'accessibleImage',
       title: 'Social Media Image',
-      description:
-        'This image will be used when sharing the post on social media. Facebook recommends an image size of 1200x630px',
-      fieldset: 'socialImage',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'imageAltText',
-      type: 'string',
-      title: 'Image Alt Text',
-      fieldset: 'socialImage',
-      description: 'The image that will be used in the SEO and Social Media',
+      description: 'This image will be used when sharing this page on social media.',
+      validation: (Rule: Rule) =>
+        Rule.custom((fields: any) => {
+          if (fields && fields.asset && typeof fields.alt === 'string') {
+            return true
+          }
+          return 'Preview image: The image and an alt text is required'
+        }),
     },
   ],
   preview: {

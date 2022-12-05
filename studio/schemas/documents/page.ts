@@ -39,14 +39,8 @@ export default {
       type: 'accessibleImage',
       title: 'Social Media Image',
       group: 'content',
-      description: 'This image will be used when sharing this page on social media.',
-      validation: (Rule: Rule) =>
-        Rule.custom((fields: any) => {
-          if (fields && fields.asset && typeof fields.alt === 'string') {
-            return true
-          }
-          return 'Preview image: The image and an alt text is required'
-        }),
+      description:
+        'This image will be used when sharing this page on social media. If no image is provided the default one from your Site Settings will be used.',
     },
     {
       name: 'content',

@@ -11,11 +11,12 @@ import { client } from '@/lib/sanity'
 const builder = imageUrlBuilder(client)
 
 const MyApp = ({ Component, pageProps }: NextAppProps) => {
-    const openGraphImages = pageProps.accessibleImage
+    console.log(pageProps)
+    const openGraphImages = pageProps.accessibleImage?.asset
         ? [
               {
                   url: builder
-                      .image(pageProps.accessibleImage)
+                      .image(pageProps.accessibleImage.asset)
                       .width(800)
                       .height(600)
                       .url(),
@@ -26,7 +27,7 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
               {
                   // Facebook recommended size
                   url: builder
-                      .image(pageProps.accessibleImage)
+                      .image(pageProps.accessibleImage.asset)
                       .width(1200)
                       .height(630)
                       .url(),
@@ -37,7 +38,7 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
               {
                   // Square 1:1
                   url: builder
-                      .image(pageProps.accessibleImage)
+                      .image(pageProps.accessibleImage.asset)
                       .width(600)
                       .height(600)
                       .url(),
@@ -49,38 +50,38 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
         : [
               {
                   url: builder
-                      .image(pageProps.config.seo.socialImage)
+                      .image(pageProps.config.seo.accessibleImage)
                       .width(800)
                       .height(600)
                       .url(),
                   width: 800,
                   height: 600,
-                  alt: pageProps.config.seo.imageAltText,
+                  alt: pageProps.config.seo.accessibleImage.alt,
               },
               {
                   // Facebook recommended size
                   url: builder
-                      .image(pageProps.config.seo.socialImage)
+                      .image(pageProps.config.seo.accessibleImage)
                       .width(1200)
                       .height(630)
                       .url(),
                   width: 1200,
                   height: 630,
-                  alt: pageProps.config.seo.imageAltText,
+                  alt: pageProps.config.seo.accessibleImage.alt,
               },
               {
                   // Square 1:1
                   url: builder
-                      .image(pageProps.config.seo.socialImage)
+                      .image(pageProps.config.seo.accessibleImage)
                       .width(600)
                       .height(600)
                       .url(),
                   width: 600,
                   height: 600,
-                  alt: pageProps.config.seo.imageAltText,
+                  alt: pageProps.config.seo.accessibleImage.alt,
               },
           ]
-    console.log(pageProps)
+    // const openGraphImages = []
     return (
         <>
             <DefaultSeo
