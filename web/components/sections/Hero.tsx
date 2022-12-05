@@ -63,30 +63,3 @@ const Hero = ({ heading, backgroundImage, tagline, ctas }: HeroProps) => {
 };
 
 export default Hero;
-
-{
-  /* <div>
-<div className="relative">
-  <div className="absolute inset-x-0 bottom-0 h-1/2">
-    <div className="container">
-      <div className="relative">
-        <div className="absolute inset-x-o">
-          <Image src={myImage} alt={heading} fill />
-        </div>
-        <div className="relative">
-          <h1>{heading}</h1>
-          <div>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
-          {ctas && (
-            <div>
-              {ctas.map((cta) => (
-                <Cta {...cta} key={cta._key} />
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div> */
-}

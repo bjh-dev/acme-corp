@@ -14,11 +14,14 @@ const Figure = (props) => {
   return (
     <>
       <figure>
-        <Image
-          src={builder.image(value.asset).auto('format').width(2000).url()}
-          alt={value.alt}
-          fill
-        />
+        <div className="relative object-cover w-auto h-auto">
+          <Image
+            src={builder.image(value.asset).auto('format').width(2000).url()}
+            alt={value.alt}
+            width={1920}
+            height={1080}
+          />
+        </div>
         {value.caption && (
           <figcaption>
             <div>
