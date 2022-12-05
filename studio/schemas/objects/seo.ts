@@ -1,11 +1,10 @@
-import { Rule } from "sanity";
+import {Rule} from 'sanity'
 
 export default {
   name: 'seo',
   title: 'SEO',
   type: 'object',
-  description:
-    'These settings are used to generate the SEO and Social Media settings',
+  description: 'These settings are used to generate the SEO and Social Media settings',
   fieldsets: [
     {
       name: 'socialImage',
@@ -13,7 +12,7 @@ export default {
     },
   ],
   fields: [
-     {
+    {
       name: 'title',
       type: 'string',
       title: 'Title',
@@ -37,9 +36,9 @@ export default {
       fieldset: 'socialImage',
       options: {
         hotspot: true,
-      }
+      },
     },
-     {
+    {
       name: 'imageAltText',
       type: 'string',
       title: 'Image Alt Text',
@@ -54,5 +53,5 @@ export default {
       description: 'The alt text for the image',
       media: 'image',
     },
-  }
+  },
 }

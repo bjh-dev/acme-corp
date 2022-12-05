@@ -1,11 +1,13 @@
-import { Rule } from "sanity";
+import {Rule} from 'sanity'
 
 export default {
   title: 'Call to action',
   name: 'cta',
   type: 'object',
   validation: (Rule: Rule) =>
-    Rule.custom((fields:any = {}) => !fields.route || !fields.link || 'Only one link type is allowed'),
+    Rule.custom(
+      (fields: any = {}) => !fields.route || !fields.link || 'Only one link type is allowed'
+    ),
   fieldsets: [
     {
       title: 'Link',
@@ -23,7 +25,7 @@ export default {
       description: 'Use this to link between pages on the website',
       name: 'route',
       type: 'reference',
-      to: [{ type: 'route' }],
+      to: [{type: 'route'}],
       fieldset: 'link',
     },
     {
@@ -41,12 +43,12 @@ export default {
       link: 'link',
     },
     prepare(selection: any) {
-      const { title, routeTitle, slug, link } = selection;
-      const subtitleExtra = slug ? `Slug:/${slug}/` : link ? `External link: ${link}` : 'Not set';
+      const {title, routeTitle, slug, link} = selection
+      const subtitleExtra = slug ? `Slug:/${slug}/` : link ? `External link: ${link}` : 'Not set'
       return {
         title: `${title}`,
         subtitle: `${routeTitle} ${subtitleExtra}`,
-      };
+      }
     },
   },
-};
+}

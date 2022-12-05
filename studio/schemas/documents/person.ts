@@ -1,4 +1,4 @@
-import { GoPerson } from 'react-icons/go'
+import {GoPerson} from 'react-icons/go'
 
 export default {
   name: 'person',

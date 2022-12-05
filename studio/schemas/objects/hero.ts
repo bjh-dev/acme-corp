@@ -38,12 +38,12 @@ export default {
       title: 'heading',
       media: 'backgroundImage',
     },
-    prepare({ title, media }: any) {
+    prepare({title, media}: any) {
       return {
         title,
         subtitle: 'Hero section',
         media,
-      };
+      }
     },
   },
-};
+}

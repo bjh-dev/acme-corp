@@ -1,9 +1,9 @@
-import { GoMilestone } from "react-icons/go";
-import { Slug } from "sanity";
+import {GoMilestone} from 'react-icons/go'
+import {Slug} from 'sanity'
 
 type PrepareProps = {
-  pageTitle?: any;
-  slug?: any,
+  pageTitle?: any
+  slug?: any
 }
 
 export default {
@@ -46,11 +46,11 @@ export default {
       pageTitle: 'page.title',
     },
     prepare(selection: PrepareProps) {
-      const { slug, pageTitle } = selection
+      const {slug, pageTitle} = selection
       return {
         title: slug === '/' ? '/' : `/${slug}`,
         subtitle: `Page: ${pageTitle}`,
-      };
+      }
     },
   },
-};
+}
