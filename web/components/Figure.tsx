@@ -15,7 +15,9 @@ const Figure = (props) => {
         <>
             <figure
                 className={`textsection-figure ${
-                    value.caption ? 'rounded-md bg-zinc-200' : '-my-8'
+                    value.caption
+                        ? 'rounded-md bg-zinc-200 dark:bg-zinc-700'
+                        : '-my-8'
                 }`}
             >
                 <div className="relative h-auto w-auto object-cover">
@@ -34,7 +36,7 @@ const Figure = (props) => {
                     />
                 </div>
                 {value.caption && (
-                    <figcaption className="-mt-8 px-4 py-1 text-sm text-zinc-800">
+                    <figcaption className="-mt-8 px-4 py-1 text-sm text-zinc-800 dark:text-zinc-300">
                         <div>
                             <div>
                                 <p>{value.caption}</p>
