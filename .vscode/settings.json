@@ -1,8 +1,9 @@
 {
   "eslint.workingDirectories": ["web", "studio"],
-  "cSpell.words": [
-    "fieldsets",
-    "groq",
-    "portabletext"
-  ]
+  "cSpell.words": ["fieldsets", "groq", "portabletext"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
