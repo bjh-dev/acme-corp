@@ -6,7 +6,7 @@ import HamburgerIcon from '@/components/icons/Hamburger';
 import { HeaderProps, LogoProps } from '@/lib/types';
 import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
 
-import Logo from '../ui/Logo';
+import Logo from './Logo';
 
 class Header extends Component<HeaderProps> {
   state = { showNav: false };

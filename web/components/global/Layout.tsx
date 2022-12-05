@@ -4,7 +4,6 @@ import React from 'react';
 
 import Footer from '@/components/global/Footer';
 import Header from '@/components/global/Header';
-import Logo from '@/components/ui/Logo';
 import { LayoutProps } from '@/lib/types';
 
 const Layout = (props: LayoutProps) => {
