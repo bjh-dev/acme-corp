@@ -31,6 +31,7 @@ const Hero = ({ heading, backgroundImage, tagline, ctas }: HeroProps) => {
                             className="h-full w-full object-cover"
                             src={myImage}
                             fill
+                            priority
                             alt="People working on laptops"
                         />
                         <div className="absolute inset-0 bg-indigo-300 mix-blend-multiply" />

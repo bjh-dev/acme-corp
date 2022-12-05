@@ -19,7 +19,7 @@ const Figure = (props) => {
                         src={builder
                             .image(value.asset)
                             .auto('format')
-                            .width(2000)
+                            .width(1920)
                             .url()}
                         alt={value.alt}
                         width={1920}
