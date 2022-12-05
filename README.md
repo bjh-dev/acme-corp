@@ -72,4 +72,6 @@ Next.js supports modern browsers with zero configuration.
 - [Sanity Documentation](https://www.sanity.io/docs) - learn about Sanity features and API.
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn about Tailwind CSS.
 
+---
+
 Much of this project borrows from [Justin Linn](https://github.com/LinnJS/nextjs-sanity-website-builder) typescript conversion of the popular [Sanity Landing Page Builder](https://github.com/sanity-io/sanity-template-nextjs-landing-pages).
