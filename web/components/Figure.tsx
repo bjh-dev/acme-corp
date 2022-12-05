@@ -13,7 +13,11 @@ const Figure = (props) => {
     }
     return (
         <>
-            <figure>
+            <figure
+                className={`textsection-figure ${
+                    value.caption ? 'rounded-md bg-zinc-200' : '-my-8'
+                }`}
+            >
                 <div className="relative h-auto w-auto object-cover">
                     <Image
                         src={builder
@@ -24,10 +28,13 @@ const Figure = (props) => {
                         alt={value.alt}
                         width={1920}
                         height={1080}
+                        className={`rounded-tl-md ${
+                            value.caption ? 'rounded-tr-md' : 'rounded-md'
+                        }`}
                     />
                 </div>
                 {value.caption && (
-                    <figcaption>
+                    <figcaption className="-mt-8 px-4 py-1 text-sm text-zinc-800">
                         <div>
                             <div>
                                 <p>{value.caption}</p>
