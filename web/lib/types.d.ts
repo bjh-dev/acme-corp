@@ -153,6 +153,7 @@ export interface TextSectionProps {
     heading: string
     label: string
     text: any[]
+    isMultiColumn: boolean
 }
 
 export interface MailChimpProps {
