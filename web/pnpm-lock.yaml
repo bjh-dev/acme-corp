@@ -27,6 +27,7 @@ specifiers:
   eslint-plugin-jest: ^26.8.2
   eslint-plugin-jest-dom: ^4.0.2
   eslint-plugin-jsx-a11y: ^6.6.1
+  eslint-plugin-next: ^0.0.0
   eslint-plugin-node: ^11.1.0
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-promise: ^6.0.0
@@ -96,6 +97,7 @@ devDependencies:
   eslint-plugin-jest: 26.9.0_dxdxm4jns3toku55zlkqnb7ww4
   eslint-plugin-jest-dom: 4.0.3_eslint@8.28.0
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.28.0
+  eslint-plugin-next: 0.0.0
   eslint-plugin-node: 11.1.0_eslint@8.28.0
   eslint-plugin-prettier: 4.2.1_cwlo2dingkvfydnaculr42urve
   eslint-plugin-promise: 6.1.1_eslint@8.28.0
@@ -4229,6 +4231,10 @@ packages:
       language-tags: 1.0.6
       minimatch: 3.1.2
       semver: 6.3.0
+    dev: true
+
+  /eslint-plugin-next/0.0.0:
+    resolution: {integrity: sha512-IldNDVb6WNduggwRbYzSGZhaskUwVecJ6fhmqwX01+S1aohwAWNzU4me6y47DDzpD/g0fdayNBGxEdt9vKkUtg==}
     dev: true
 
   /eslint-plugin-node/11.1.0_eslint@8.28.0:
