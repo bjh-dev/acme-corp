@@ -6,16 +6,7 @@ export default {
   type: 'document',
   title: 'Page',
   icon: GoBrowser,
-  groups: [
-    {name: 'content', title: 'Content', default: true},
-    {name: 'seo', title: 'SEO'},
-  ],
-  fieldsets: [
-    {
-      name: 'socialImageFields',
-      title: 'Social Media Image',
-    },
-  ],
+  groups: [{name: 'content', title: 'Content', default: true}],
   fields: [
     {
       name: 'title',
@@ -64,17 +55,13 @@ export default {
       group: 'content',
       of: [{type: 'hero'}, {type: 'imageSection'}, {type: 'mailchimp'}, {type: 'textSection'}],
     },
-    {
-      name: 'seo',
-      type: 'seo',
-      title: 'SEO',
-      group: 'seo',
-    },
   ],
 
   preview: {
     select: {
       title: 'title',
+      subtitle: 'description',
+      media: 'accessibleImage',
     },
   },
 }

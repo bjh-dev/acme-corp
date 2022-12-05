@@ -11,39 +11,39 @@ import { client } from '@/lib/sanity'
 const builder = imageUrlBuilder(client)
 
 const MyApp = ({ Component, pageProps }: NextAppProps) => {
-    const openGraphImages = pageProps.seo?.socialImage
+    const openGraphImages = pageProps.accessibleImage
         ? [
               {
                   url: builder
-                      .image(pageProps.seo?.socialImage)
+                      .image(pageProps.accessibleImage)
                       .width(800)
                       .height(600)
                       .url(),
                   width: 800,
                   height: 600,
-                  alt: pageProps.seo?.imageAltText,
+                  alt: pageProps.accessibleImage.alt,
               },
               {
                   // Facebook recommended size
                   url: builder
-                      .image(pageProps.seo?.socialImage)
+                      .image(pageProps.accessibleImage)
                       .width(1200)
                       .height(630)
                       .url(),
                   width: 1200,
                   height: 630,
-                  alt: pageProps.seo?.imageAltText,
+                  alt: pageProps.accessibleImage.alt,
               },
               {
                   // Square 1:1
                   url: builder
-                      .image(pageProps.seo?.socialImage)
+                      .image(pageProps.accessibleImage)
                       .width(600)
                       .height(600)
                       .url(),
                   width: 600,
                   height: 600,
-                  alt: pageProps.seo?.imageAltText,
+                  alt: pageProps.accessibleImage.alt,
               },
           ]
         : [
@@ -80,17 +80,17 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
                   alt: pageProps.config.seo.imageAltText,
               },
           ]
+    console.log(pageProps)
     return (
         <>
             <DefaultSeo
                 title={
-                    pageProps.seo?.title ||
+                    pageProps.descriptiveTitle ||
                     pageProps.title ||
                     pageProps.config.seo.title
                 }
                 description={
-                    pageProps.seo?.description ||
-                    pageProps.config.seo.description
+                    pageProps.description || pageProps.config.seo.description
                 }
                 canonical={
                     process.env.NODE_ENV === 'production'
