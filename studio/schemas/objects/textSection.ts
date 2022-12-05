@@ -14,6 +14,16 @@ export default {
       title: 'Heading',
     },
     {
+      name: 'isMultiColumn',
+      type: 'boolean',
+      title: 'Multi-column Text?',
+      description: 'Split the text into multiple columns (depending on device size)',
+      initialValue: false,
+      options: {
+        layout: 'checkbox',
+      },
+    },
+    {
       name: 'text',
       type: 'portableText',
       title: 'Text',
@@ -23,11 +33,11 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({ heading }: any) {
+    prepare({heading}: any) {
       return {
         title: `${heading}`,
         subtitle: 'Text section',
-      };
+      }
     },
   },
-};
+}

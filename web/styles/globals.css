@@ -4,11 +4,19 @@
 
 .two-columns {
     column-count: 1;
+    column-fill: balance;
     text-align: justify;
     column-span: none;
     column-gap: 4rem;
-    widows: 2;
-    orphans: 2;
+    .textsection-figure {
+        column-span: all;
+        @media (min-width: theme('screens.md')) {
+            margin: 1rem 0 0 0;
+        }
+        @media (min-width: theme('screens.xl')) {
+            column-span: none;
+        }
+    }
     @media (min-width: theme('screens.md')) {
         column-count: 2;
     }
