@@ -1,12 +1,13 @@
 import { useTheme } from 'next-themes';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const ThemeSwitcher = () => {
+const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
+
   return (
     <button
       aria-label="Toggle Dark Mode"
@@ -46,4 +47,4 @@ const ThemeSwitcher = () => {
   );
 };
 
-export default ThemeSwitcher;
+export default ThemeSwitch;

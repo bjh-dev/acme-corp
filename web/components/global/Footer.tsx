@@ -6,7 +6,8 @@ import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { FooterProps } from '@/lib/types';
 import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
 
-import ThemeSwitcher from '../ui/ThemeSwitcher';
+import ThemeSwitcher from '../ui/ThemeSwitch';
+import ThemeSwitch from '../ui/ThemeSwitch';
 
 const Footer = ({ navItems, text, router }: FooterProps) => {
   return (
@@ -38,7 +39,7 @@ const Footer = ({ navItems, text, router }: FooterProps) => {
               </ul>
             </nav>
           </div>
-          <ThemeSwitcher />
+          <ThemeSwitch />
         </div>
         <div className="text-xs text-center">
           <SimpleBlockContent blocks={text} />
