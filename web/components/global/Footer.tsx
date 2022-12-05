@@ -6,7 +6,6 @@ import SimpleBlockContent from '@/components/SimpleBlockContent';
 import { FooterProps } from '@/lib/types';
 import { getPathFromSlug, slugParamToPath } from '@/lib/urls';
 
-import ThemeSwitcher from '../ui/ThemeSwitch';
 import ThemeSwitch from '../ui/ThemeSwitch';
 
 const Footer = ({ navItems, text, router }: FooterProps) => {
