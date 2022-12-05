@@ -80,7 +80,6 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
                   alt: pageProps.config.seo.imageAltText,
               },
           ]
-    console.log(pageProps)
     return (
         <>
             <DefaultSeo
