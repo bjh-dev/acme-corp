@@ -1,7 +1,7 @@
-import { GoGear } from "react-icons/go";
-import * as bcp47 from 'bcp-47';
-import { Rule } from 'sanity';
-const RegexHandle = '/(^|[^@\w])@(\w{1,15})\b/'
+import {GoGear} from 'react-icons/go'
+import * as bcp47 from 'bcp-47'
+import {Rule} from 'sanity'
+const RegexHandle = '/(^|[^@w])@(w{1,15})\b/'
 
 export default {
   name: 'site-config',
@@ -9,13 +9,13 @@ export default {
   title: 'Site configuration',
   icon: GoGear,
   groups: [
-    { name: 'general', title: 'Site', default: true },
-    { name: 'business', title: 'Business Details' },
-    { name: 'seo', title: 'SEO Defaults' },
-    { name: 'thirdParty', title: '3rd Party' },
+    {name: 'general', title: 'Site', default: true},
+    {name: 'business', title: 'Business Details'},
+    {name: 'seo', title: 'SEO Defaults'},
+    {name: 'thirdParty', title: '3rd Party'},
   ],
   fieldsets: [
-    { name: 'footer', title: 'Footer' },
+    {name: 'footer', title: 'Footer'},
     {
       name: 'postalAddress',
       title: 'Postal Address',
@@ -46,7 +46,7 @@ export default {
       name: 'frontpage',
       type: 'reference',
       description: 'Choose page to be the frontpage',
-      to: { type: 'page' },
+      to: {type: 'page'},
       group: 'general',
     },
     {
@@ -69,9 +69,6 @@ export default {
           type: 'string',
           title: 'Alternative text',
           description: 'Important for SEO and accessibility.',
-          options: {
-            isHighlighted: true,
-          },
         },
       ],
     },
@@ -95,7 +92,7 @@ export default {
       title: 'Instagram Handle',
       description: 'Enter your Instagram profile handle (with @)',
       group: 'thirdParty',
-      validation: (Rule: Rule) => Rule.regex(/(^|[^@\w])@(\w{1,15})\b/, { name: '@handle' }),
+      validation: (Rule: Rule) => Rule.regex(/(^|[^@\w])@(\w{1,15})\b/, {name: '@handle'}),
     },
     {
       name: 'twitterHandle',
@@ -103,7 +100,7 @@ export default {
       title: 'Twitter Handle',
       description: 'Enter your Twitter handle (with @)',
       group: 'thirdParty',
-      validation: (Rule: Rule) => Rule.regex(/(^|[^@\w])@(\w{1,15})\b/, { name: '@handle' }),
+      validation: (Rule: Rule) => Rule.regex(/(^|[^@\w])@(\w{1,15})\b/, {name: '@handle'}),
     },
     {
       name: 'googleAnalyticsId',
@@ -131,7 +128,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'route' }],
+          to: [{type: 'route'}],
         },
       ],
     },
@@ -148,7 +145,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'route' }],
+          to: [{type: 'route'}],
         },
       ],
     },
@@ -187,7 +184,7 @@ export default {
         Rule.regex(
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         ),
-        group: 'business',
+      group: 'business',
     },
     {
       name: 'abn',
@@ -195,7 +192,7 @@ export default {
       type: 'string',
       group: 'business',
     },
-     {
+    {
       name: 'address',
       title: 'Business Address',
       type: 'address',
@@ -231,6 +228,6 @@ export default {
       group: 'business',
       to: [{type: 'person'}],
       validation: (Rule: Rule) => Rule.required(),
-		}
+    },
   ],
-};
+}
