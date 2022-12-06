@@ -50,7 +50,7 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
         : [
               {
                   url: builder
-                      .image(pageProps.config.seo.accessibleImage)
+                      .image(pageProps.config.seo.accessibleImage.asset)
                       .width(800)
                       .height(600)
                       .url(),
@@ -61,7 +61,7 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
               {
                   // Facebook recommended size
                   url: builder
-                      .image(pageProps.config.seo.accessibleImage)
+                      .image(pageProps.config.seo.accessibleImage.asset)
                       .width(1200)
                       .height(630)
                       .url(),
@@ -72,7 +72,7 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
               {
                   // Square 1:1
                   url: builder
-                      .image(pageProps.config.seo.accessibleImage)
+                      .image(pageProps.config.seo.accessibleImage.asset)
                       .width(600)
                       .height(600)
                       .url(),
