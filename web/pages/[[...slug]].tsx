@@ -161,11 +161,12 @@ const LandingPage = ({
     return (
         <Layout config={config}>
             <NextSeo
+                title={title}
+                description={description}
                 openGraph={{
                     title: title,
                     description: description,
                     images: openGraphImages,
-                    siteName: config?.title,
                 }}
             />
             {content && <RenderSections sections={content} />}
