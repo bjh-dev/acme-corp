@@ -113,11 +113,14 @@ const builder = imageUrlBuilder(client)
 
 const LandingPage = ({
     title = '',
-    description,
+    descriptiveTitle,
+    descriptionShort,
+    descriptionLong,
     slug,
     disallowRobots,
     content,
     openGraphImage,
+    altText,
     config,
     ...rest
 }: LandingPageProps) => {
@@ -131,7 +134,7 @@ const LandingPage = ({
                       .url(),
                   width: 800,
                   height: 600,
-                  alt: title,
+                  alt: altText,
               },
               {
                   // Facebook recommended size
@@ -142,7 +145,7 @@ const LandingPage = ({
                       .url(),
                   width: 1200,
                   height: 630,
-                  alt: title,
+                  alt: altText,
               },
               {
                   // Square 1:1
@@ -153,7 +156,7 @@ const LandingPage = ({
                       .url(),
                   width: 600,
                   height: 600,
-                  alt: title,
+                  alt: altText,
               },
           ]
         : []
@@ -162,10 +165,10 @@ const LandingPage = ({
         <Layout config={config}>
             <NextSeo
                 title={title}
-                description={description}
+                description={descriptionLong}
                 openGraph={{
-                    title: title,
-                    description: description,
+                    title: descriptiveTitle,
+                    description: descriptionShort,
                     images: openGraphImages,
                 }}
             />

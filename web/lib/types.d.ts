@@ -4,10 +4,13 @@ export interface DocumentProps {
 
 export interface LandingPageProps {
     title?: string
-    description: string
+    descriptiveTitle?: string
+    descriptionShort: string
+    descriptionLong: string
     slug: string
     disallowRobots: boolean
     openGraphImage: any
+    altText: string
     content?: any[]
     config: ConfigProps
 }
