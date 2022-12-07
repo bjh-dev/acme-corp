@@ -200,11 +200,10 @@ export default {
     },
     {
       name: 'isPostalAddressSame',
-      title: 'Is Postal Address Same as Business Address?',
+      title: 'Is the postal address the same as the business address?',
       type: 'boolean',
       fieldset: 'postalAddress',
       initialValue: true,
-      description: 'If the postal address the same as the business address?',
       options: {
         layout: 'checkbox',
       },
@@ -215,19 +214,23 @@ export default {
       title: 'Postal Address',
       type: 'address',
       fieldset: 'postalAddress',
+      hidden: ({document}: any) => document.isPostalAddressSame,
       options: {
         collapsible: false,
       },
       group: 'business',
     },
     {
-      name: 'primaryContact',
-      title: 'Primary Contact',
-      description: 'Use this is no other people are listed as contacts below',
-      type: 'reference',
+      name: 'contactName',
+      title: 'Primary Contact Name',
+      type: 'string',
       group: 'business',
-      to: [{type: 'person'}],
-      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'contactPhone',
+      title: 'Primary Contact Phone',
+      type: 'string',
+      group: 'business',
     },
   ],
 }
