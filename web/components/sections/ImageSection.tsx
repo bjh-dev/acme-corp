@@ -34,20 +34,20 @@ const ImageSection = ({
                             fill
                             alt="People working on laptops"
                         />
-                        <div className="absolute inset-0 bg-zinc-600 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-gray-600 mix-blend-multiply" />
                     </div>
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                         <div className="container">
                             <div className=" max-w-lg">
-                                <h2 className="text-sm font-bold uppercase tracking-tight text-indigo-600">
-                                    <span className="bg-zinc-200 px-4 py-2">
+                                <h2 className="font-sans text-sm font-bold uppercase tracking-tight text-primary-600">
+                                    <span className="bg-gray-200 px-4 py-2">
                                         {heading}
                                     </span>
                                 </h2>
-                                <h3 className="mt-6 text-4xl font-bold text-zinc-50">
+                                <h3 className="mt-6 text-4xl font-bold text-gray-50">
                                     {label}
                                 </h3>
-                                <div className="py-12 text-zinc-50">
+                                <div className="py-12 text-gray-50">
                                     {text && (
                                         <SimpleBlockContent blocks={text} />
                                     )}

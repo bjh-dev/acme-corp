@@ -34,15 +34,15 @@ const Hero = ({ heading, backgroundImage, tagline, ctas }: HeroProps) => {
                             priority
                             alt="People working on laptops"
                         />
-                        <div className="absolute inset-0 bg-indigo-300 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-primary-300 mix-blend-multiply" />
                     </div>
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                         <div className="container">
                             <div className=" max-w-lg">
-                                <h2 className="text-4xl font-bold tracking-tight text-zinc-50 sm:text-5xl lg:text-6xl">
+                                <h2 className="font-sans text-3xl font-bold tracking-tight text-gray-50 sm:text-5xl lg:text-5xl">
                                     {heading}
                                 </h2>
-                                <div className="pt-6 text-2xl text-zinc-50">
+                                <div className="pt-6 text-2xl leading-tight text-primary-50">
                                     {tagline && (
                                         <SimpleBlockContent blocks={tagline} />
                                     )}

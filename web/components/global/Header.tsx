@@ -37,7 +37,10 @@ class Header extends Component<HeaderProps> {
         const { showNav } = this.state
 
         return (
-            <div data-show-nav={showNav} className="py-4 dark:bg-zinc-900">
+            <div
+                data-show-nav={showNav}
+                className="py-4 font-sans dark:bg-gray-900"
+            >
                 <div className="container">
                     <div className="flex items-center justify-between">
                         <div>
@@ -74,9 +77,9 @@ class Header extends Component<HeaderProps> {
                                                                 : 'false'
                                                         }
                                                         aria-current={isActive}
-                                                        className={`border-b-2 border-zinc-50 pb-2 hover:border-zinc-800 hover:text-indigo-500 dark:border-zinc-900 dark:hover:border-zinc-50 ${
+                                                        className={`border-b-2 border-gray-50 pb-2 hover:border-gray-800 hover:text-primary-500 dark:border-gray-900 dark:hover:border-gray-50 ${
                                                             isActive
-                                                                ? 'border-zinc-50 text-indigo-500'
+                                                                ? 'border-gray-50 text-primary-500'
                                                                 : null
                                                         }`}
                                                     >

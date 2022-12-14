@@ -1,33 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-const { fontFamily } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-    content: [
-        './pages/**/*.{js,ts,jsx,tsx}',
-        './components/**/*.{js,ts,jsx,tsx}',
-    ],
-    darkMode: 'class',
     theme: {
-        fontWeights: {
-            light: 200,
-            normal: 400,
-            bold: 700,
-        },
-        container: {
-            center: true,
-            padding: {
-                DEFAULT: '1rem',
-                sm: '2rem',
-                lg: '4rem',
-                xl: '5rem',
-                '2xl': '6rem',
-            },
-        },
         extend: {
-            fontFamily: {
-                sans: ['var(--font-montserrat)', ...fontFamily.sans],
-                serif: ['var(--font-lora)', ...fontFamily.serif],
-            },
             colors: {
                 primary: {
                     DEFAULT: '#28a0aa',
@@ -42,7 +17,7 @@ module.exports = {
                     800: '#186066',
                     900: '#144e53',
                 },
-                'lime-zest': {
+                lime: {
                     DEFAULT: '#c8e069',
                     50: '#fcfdf8',
                     100: '#fafcf0',
@@ -68,7 +43,7 @@ module.exports = {
                     800: '#7c521d',
                     900: '#654318',
                 },
-                mandy: {
+                rose: {
                     DEFAULT: '#ef5865',
                     50: '#fef7f7',
                     100: '#fdeef0',
@@ -97,10 +72,4 @@ module.exports = {
             },
         },
     },
-    plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/typography'),
-        require('@tailwindcss/line-clamp'),
-        require('@tailwindcss/aspect-ratio'),
-    ],
 }

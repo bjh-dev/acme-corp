@@ -160,7 +160,7 @@ const LandingPage = ({
               },
           ]
         : []
-
+    console.log(config)
     return (
         <Layout config={config}>
             <NextSeo

@@ -12,7 +12,7 @@ const cta = ({ title, route, link }: CtaProps) => {
                     query: { slug: route.slug.current },
                 }}
                 as={`/${route.slug.current}`}
-                className="rounded-sm bg-indigo-600 px-4 py-3 text-zinc-50 shadow-lg hover:bg-indigo-500"
+                className="rounded-sm bg-primary-600 px-4 py-3 font-sans font-bold uppercase text-gray-50 shadow-lg hover:bg-primary-500"
             >
                 {title}
             </Link>

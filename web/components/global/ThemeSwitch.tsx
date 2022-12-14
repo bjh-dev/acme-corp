@@ -12,7 +12,7 @@ const ThemeSwitcher = () => {
         <button
             aria-label="Toggle Dark Mode"
             type="button"
-            className="group flex items-center justify-center rounded-lg transition-all"
+            className="group flex items-center justify-center rounded-lg font-sans transition-all"
             onClick={() =>
                 setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
             }
@@ -24,7 +24,7 @@ const ThemeSwitcher = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        className="h-5 w-5 text-gray-800 group-hover:stroke-indigo-500 dark:text-gray-200"
+                        className="h-5 w-5 text-gray-800 group-hover:stroke-primary-500 dark:text-gray-200"
                     >
                         {resolvedTheme === 'dark' ? (
                             <path
@@ -44,7 +44,7 @@ const ThemeSwitcher = () => {
                     </svg>
                 )}
             </div>
-            <div className="text-xs group-hover:text-indigo-500">Theme</div>
+            <div className="text-xs group-hover:text-primary-500">Theme</div>
         </button>
     )
 }

@@ -28,7 +28,7 @@ export default class MyDocument extends Document<DocumentProps> {
                     <meta charSet="utf-8" />
                     <Favicon />
                 </Head>
-                <body className="text-zinc-800 dark:bg-zinc-800 dark:text-zinc-50">
+                <body className="text-gray-800 dark:bg-gray-800 dark:text-gray-50">
                     <Main />
                     <NextScript />
                 </body>

@@ -10,11 +10,11 @@ import ThemeSwitcher from './ThemeSwitch'
 
 const Footer = ({ navItems, text, router }: FooterProps) => {
     return (
-        <div className="bg-zinc-200 py-12 dark:bg-zinc-900">
+        <div className="bg-gray-200 py-12 dark:bg-gray-900">
             <div className="container">
                 <div className="flex flex-col items-center justify-between md:flex-row">
                     <div>
-                        <nav>
+                        <nav className="font-sans">
                             <ul className="flex space-x-2 py-6">
                                 {navItems &&
                                     navItems.map((item) => {
@@ -37,9 +37,9 @@ const Footer = ({ navItems, text, router }: FooterProps) => {
                                                             : 'false'
                                                     }
                                                     aria-current={isActive}
-                                                    className={`border-b-2 border-zinc-200 pb-2 hover:border-zinc-100 hover:text-indigo-500 dark:border-zinc-900 dark:hover:border-zinc-50 ${
+                                                    className={`border-b-2 border-gray-200 pb-2 hover:border-gray-100 hover:text-primary-500 dark:border-gray-900 dark:hover:border-gray-50 ${
                                                         isActive
-                                                            ? 'border-zinc-50 text-indigo-500'
+                                                            ? 'border-gray-50 text-primary-500'
                                                             : null
                                                     }`}
                                                 >
